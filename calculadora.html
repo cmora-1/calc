@@ -24,6 +24,19 @@
 		  } 
 		  num.value = Math.pow(num.value, 2);
 		}
+		
+		function cubo(){
+		  var num = document.getElementById("pantalla");
+		 
+		  if (isNaN(num.value) || num.value === "") {
+		    num.value = "Error";
+		    $("#cnterr").html(parseInt($("#cnterr").html())+1);
+		    $("#msgerr").html(" Operando incorrecto");
+		    
+		    return;
+		  } 
+		  num.value = Math.pow(num.value, 3);
+		}
 	</script>
 </head>
 <body>
@@ -31,6 +44,7 @@
 	<div>
 		Número: <input type="text" id="pantalla" onclick="vaciar()"/>
 		<button id="cuadrado" onclick="cuadrado()">x<sup>2</sup></button>
+		<button id="cubo" onclick="cubo()">x<sup>3</sup></button>
 	</div>
 </body>
 </html>
