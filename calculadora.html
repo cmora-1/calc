@@ -24,6 +24,25 @@
 		  } 
 		  num.value = Math.pow(num.value, 2);
 		}
+		
+		function raiz(){
+		  var num = document.getElementById("pantalla");
+		  
+		  if (isNaN(num.value) || num.value === "") {
+		    num.value = "Error";
+		    $("#cnterr").html(parseInt($("#cnterr").html())+1);
+		    $("#msgerr").html(" Operando incorrecto");
+		    return;
+		  }
+		  
+		  if (num.value < 0) {
+		    num.value = "Error";
+		    $("#cnterr").html(parseInt($("#cnterr").html())+1);
+		    $("#msgerr").html(" N�mero negativo");
+		    return;
+		  }
+		  num.value = Math.sqrt(num.value);
+		}
 	</script>
 </head>
 <body>
@@ -31,6 +50,7 @@
 	<div>
 		Número: <input type="text" id="pantalla" onclick="vaciar()"/>
 		<button id="cuadrado" onclick="cuadrado()">x<sup>2</sup></button>
+		<button id="raiz" onclick="raiz()">sqrt(x)<sup></sup></button>
 	</div>
 </body>
 </html>
